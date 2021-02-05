@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Place = require("./models/Place");
+const Exercise = require("./models/Exercise");
 
 const app = express();
 
@@ -29,19 +29,19 @@ connection.on("error", (err) => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// TODO: ABSTRACT THESE PLACES ROUTES OUT INTO A CONTROLLER
+// TODO: ABSTRACT THESE exercises ROUTES OUT INTO A CONTROLLER
 
-app.get("/api/places", (req, res) => {
-  Place.find().then((allPlaces) => {
-    res.json(allPlaces);
-  });
-});
+// app.get("/api/exercises", (req, res) => {
+//   Exercise.find().then((allExercises) => {
+//     res.json(allExercises);
+//   });
+// });
 
-app.post("/api/places", (req, res) => {
-  Place.create(req.body).then((newPlace) => {
-    res.json(newPlace);
-  });
-});
+// app.post("/api/exercises", (req, res) => {
+//   Exercise.create(req.body).then((newExercise) => {
+//     res.json(newExercise);
+//   });
+// });
 
 // TODO: ADD PUT AND DELETE ROUTES
 
