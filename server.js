@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const Exercise = require("./models/Exercise");
+const Workout = require("./models/Workout");
 
 const app = express();
 
@@ -29,19 +29,19 @@ connection.on("error", (err) => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// TODO: ABSTRACT THESE exercises ROUTES OUT INTO A CONTROLLER
+// TODO: ABSTRACT THESE workouts ROUTES OUT INTO A CONTROLLER
 
-// app.get("/api/exercises", (req, res) => {
-//   Exercise.find().then((allExercises) => {
-//     res.json(allExercises);
-//   });
-// });
+app.get("/api/workouts", (req, res) => {
+  Exercise.find().then((allWorkouts) => {
+    res.json(allWorkouts);
+  });
+});
 
-// app.post("/api/exercises", (req, res) => {
-//   Exercise.create(req.body).then((newExercise) => {
-//     res.json(newExercise);
-//   });
-// });
+app.post("/api/workouts", (req, res) => {
+  Exercise.create(req.body).then((newExercise) => {
+    res.json(newExercise);
+  });
+});
 
 // TODO: ADD PUT AND DELETE ROUTES
 
