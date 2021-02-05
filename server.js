@@ -32,14 +32,14 @@ app.use(express.json());
 // TODO: ABSTRACT THESE workouts ROUTES OUT INTO A CONTROLLER
 
 app.get("/api/workouts", (req, res) => {
-  Exercise.find().then((allWorkouts) => {
+  Workout.find().then((allWorkouts) => {
     res.json(allWorkouts);
   });
 });
 
 app.post("/api/workouts", (req, res) => {
-  Exercise.create(req.body).then((newExercise) => {
-    res.json(newExercise);
+  Workout.create(req.body).then((newWorkout) => {
+    res.json(newWorkout);
   });
 });
 
