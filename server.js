@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Workout = require("./models/Workout");
+const routes = require("./controllers/workoutsController.js");
 
 const app = express();
 
@@ -28,24 +29,9 @@ connection.on("error", (err) => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(routes);
 
 app.use(express.static("public"));
-
-// TODO: ABSTRACT THESE workouts ROUTES OUT INTO A CONTROLLER
-
-app.get("/api/workouts", (req, res) => {
-  Workout.find().then((allWorkouts) => {
-    res.json(allWorkouts);
-  });
-});
-
-app.post("/api/workouts", (req, res) => {
-  Workout.create(req.body).then((newWorkout) => {
-    res.json(newWorkout);
-  });
-});
-
-// TODO: ADD PUT AND DELETE ROUTES
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
