@@ -28,9 +28,7 @@ const WorkoutSchema = new Schema(
         },
       },
     ],
-  },
-  { toJSON: { virtauls: true } }
-);
+  });
 
 // WorkoutSchema.virtual("totalDuration").get(function(){
 //   for()
