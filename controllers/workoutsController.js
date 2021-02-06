@@ -18,16 +18,19 @@ router.post("/api/workouts", function (req, res) {
   });
 });
 
-// TODO: ABSTRACT THESE workouts ROUTES OUT INTO A CONTROLLER
-
-// app.get("/api/workouts", (req, res) => {
-//   Workout.find().then((allWorkouts) => {
-//     res.json(allWorkouts);
-//   });
-// });
-
-// app.post("/api/workouts", (req, res) => {});
-
 // TODO: ADD PUT AND DELETE ROUTES
+// NOT SURE IF THESE ARE CORRECT
+router.put("api/workouts/:id", (req, res) => {
+  Workout.findByIdAndUpdate({_id: req.params.id}).then((foundWorkout) => {
+    res.json(foundWorkout);
+  });
+});
+
+router.put("api/workouts/:id", (req, res) => {
+  Workout.findByIdAndDelete({_id: req.params.id}).then((foundWorkout) => {
+    res.json(foundWorkout);
+  });
+});
+
 
 module.exports = router;
