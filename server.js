@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Workout = require("./models/Workout");
+// const workoutSeed = require("./seeders/seed")
 
 const app = express();
 
@@ -28,6 +29,19 @@ connection.on("error", (err) => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(express.static("public"));
+
+// Workout.deleteMany({})
+//   .then(() => Workout.collection.insertMany(workoutSeed))
+//   .then((data) => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
 // TODO: ABSTRACT THESE workouts ROUTES OUT INTO A CONTROLLER
 
