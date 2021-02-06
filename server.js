@@ -39,11 +39,11 @@ app.get("/api/workouts", (req, res) => {
   });
 });
 
-app.post("/api/workouts", (req, res) => {
-  Workout.create(req.body).then((newWorkout) => {
-    res.json(newWorkout);
-  });
-});
+// app.post("/api/workouts", (req, res) => {
+//   Workout.create(req.body).then((newWorkout) => {
+//     res.json(newWorkout);
+//   });
+// });
 
 // TODO: ADD PUT AND DELETE ROUTES
 
