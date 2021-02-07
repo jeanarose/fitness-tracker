@@ -19,15 +19,12 @@ router.get("/api/workouts", function (req, res) {
   });
 });
 
-// Needs to be changed.
 router.post("/api/workouts", function (req, res) {
   Workout.create(req.body).then((newWorkout) => {
     res.json(newWorkout);
   });
 });
 
-// db.students.update({name: "Steve"}, {$push: {"hobbies":"Extreme Basketweaving"}})
-// Needs to be changed.
 router.put("/api/workouts/:id", (req, res) => {
   const id = req.params.id;
   Workout.findByIdAndUpdate(id, { $push: {exercises: req.body} }).then((updatedWorkout) => {
