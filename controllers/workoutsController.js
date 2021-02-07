@@ -24,6 +24,10 @@ router.get("/exercise", (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR + "/exercise.html"));
 });
 
+router.get("/stats", (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR + "/stats.html"));
+});
+
 router.post("/api/workouts", function (req, res) {
   Workout.create(req.body).then((newWorkout) => {
     res.json(newWorkout);
