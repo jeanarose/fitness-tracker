@@ -31,17 +31,18 @@ router.post("/api/workouts", function (req, res) {
 });
 
 // // TODO: ADD PUT AND DELETE ROUTES
-// // NOT SURE IF THESE ARE CORRECT
-// router.put("api/workouts/:id", (req, res) => {
-//   Workout.findByIdAndUpdate({ _id: req.params.id }).then((foundWorkout) => {
-//     res.json(foundWorkout);
-//   });
-// });
+router.put("/api/workouts/:id", (req, res) => {
+  const id = req.params.id;
+  Workout.findByIdAndUpdate(id, req.body).then((updatedWorkout) => {
+    res.json(updatedWorkout);
+  });
+});
 
-// router.put("api/workouts/:id", (req, res) => {
-//   Workout.findByIdAndDelete({ _id: req.params.id }).then((foundWorkout) => {
-//     res.json(foundWorkout);
-//   });
-// });
+router.delete("/api/workouts/:id", (req, res) => {
+  const id = req.params.id;
+  Workout.findByIdAndDelete(id).then((response) => {
+    res.json(response);
+  });
+});
 
 module.exports = router;
