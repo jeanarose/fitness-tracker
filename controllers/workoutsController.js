@@ -35,8 +35,8 @@ router.get("/api/workouts/range", (req, res) => {
         totalDuration: { $sum: "$exercises.duration" },
       },
     },
-    { $sort: { date: 1 } },
-    { $limit: 7 }
+    { $sort: { date: -1 } },
+    { $limit: 7 },
   ]).then((allWorkouts) => {
     res.json(allWorkouts);
   });
