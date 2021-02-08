@@ -28,12 +28,6 @@ router.get("/api/workouts", function (req, res) {
   });
 });
 
-// Use one more method between the .aggregate and the .then
-// sort
-// limit
-// give back the most recent seven
-// aggregate.append({ $project: { field: 1 }}, { $limit: 2 });
-
 router.get("/api/workouts/range", (req, res) => {
   Workout.aggregate([
     {
