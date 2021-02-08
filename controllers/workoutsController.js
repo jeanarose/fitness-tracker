@@ -15,7 +15,6 @@ router.get("/stats", (req, res) => {
 });
 
 // API ROUTES
-
 router.get("/api/workouts", function (req, res) {
   Workout.aggregate([
     {
