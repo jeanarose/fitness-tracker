@@ -3,6 +3,13 @@
 ## Description
 [Fitness Tracker](https://vast-gorge-23092.herokuapp.com/?id=601efdf601f6000015c31855) is a web application designed to record resistance and cardio workouts and display stats based on previous workouts. This application is useful for tracking workouts for a particular day, viewing important data for that day such as total reps, sets, duration, and distance, and comparing that data to other days of the week. The data for Fitness Tracker is populated using MongoDB and Mongoose. 
 
+The development of Fitness Tracker was split up into front-end and back-end development. First, the front-end team designed the UI/UX and basic functionality for Fitness Tracker, including all of the files in the public directory and a seeds file. Second, I needed to complete the MVC and add a server, controller, and a model that referenced the work of the front-end team in order for the application to be fully functioning. The main additions to the application included:
+* A controller with HTML and API routes 
+* A Workout model with all of the corresponding keys from the seeds file
+* A server that connected to Mongoose and accounted for the MongoDB environment variable 
+* The use of MongoDB Atlas to store the data
+* The use of Heroku to host the deployed application 
+
 View the deployed app here: https://vast-gorge-23092.herokuapp.com/?id=601efdf601f6000015c31855
 ## Fitness Tracker
 ![Screenshot of Fitness Tracker application.](assets/images/fitness-tracker.png)
