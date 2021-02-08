@@ -30,10 +30,6 @@ const WorkoutSchema = new Schema({
   ],
 });
 
-// WorkoutSchema.virtual("totalDuration").get(function () {
-
-// });
-
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
